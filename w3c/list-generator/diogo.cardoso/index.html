@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Gerador de lista</h1>
+        <div class="entrada">
+            <button id="menos" onclick="decremento()">-</button>
+            <input type="text" name="valor" id="valor" value="0">
+            <button id="mais" onclick="incremento()">+</button>
+
+            <button id="gerar-btn" onclick="gerar()">GERAR</button>
+        </div>     
+    </div>
+    <div class="listagem main">
+        <h2>Listagem</h2>
+        <ul class="lista"></ul>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
