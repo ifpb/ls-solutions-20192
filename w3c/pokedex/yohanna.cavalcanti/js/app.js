@@ -204,3 +204,4 @@ tipo.addEventListener('change', function() {
   }
   poke.innerHTML = resultl
 })
+//a
