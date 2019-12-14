@@ -46,23 +46,31 @@ function show(json) {
             }
         }  
     }
+    loadClicks()
 }
 function adicionar(oferta, row) {
     let price = Number(oferta.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })
     let market_price = Number(oferta.market_price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })
-
+    
     let add = `<div class="col">
             <div id="offer-${oferta.id}" class="card card-block offer">
                 <div class="offer-thumb" style="background-image: url(${oferta.image.url})"></div>
                 <div class="offer-content p-4">
                     <div class="offer-title">${oferta.description}</div>
                     <div class="offer-price"><span>R$</span> ${price}</div>
-                    <div class="offer-market-price"><span>R$</span> ${market_price}</div>
+                    <div class="offer-market-price">${market_price != price ? "<span>R$</span> " + market_price : ''}</div>
                 </div>
             </div>
         </div>`
 
     row.insertAdjacentHTML('beforeend', add)
+}
 
-
+function loadClicks(){
+    const cards = document.querySelectorAll('.offer')
+    cards.forEach(card => card.addEventListener('click', () => {
+        const url = `offer.html?offer=${card.id}`.replace('offer-', '')
+        //window.open(url);
+        window.location.href = url
+    }))
 }
